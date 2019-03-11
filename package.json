@@ -22,13 +22,17 @@
   "author": "Nathan Rajlich <nathan@tootallnate.net> (http://tootallnate.net)",
   "repository": {
     "type": "git",
-    "url": "git://github.com/TooTallNate/ref.git"
+    "url": "https://github.com/iroot/ref.git"
   },
   "main": "./lib/ref.js",
   "scripts": {
     "docs": "node docs/compile",
-    "test": "mocha -gc --reporter spec --use_strict"
+    "test": "mocha -gc --reporter spec --use_strict",
+    "install": "prebuild-install || node-gyp rebuild"
   },
+  "bundledDependencies": [
+    "prebuild-install"
+  ],
   "dependencies": {
     "bindings": "1",
     "debug": "4",
